@@ -6,6 +6,12 @@ export default class ChatApp extends Component {
     super(props);
   }
   render() {
-    return <MessageBox />;
+    return (
+      <div className="grid-container">
+        <div className="message-box">
+          <MessageBox />
+        </div>
+      </div>
+    );
   }
 }

@@ -4,14 +4,22 @@ export default class MessageBox extends Component {
   constructor(props) {
     super(props);
   }
-  Messages = () => {
-    var Message = { user1: { name: "lewis", text: " yo yo yo" }, user2: { name: "Carlos", text: "KlK" } };
-    return Message;
+
+  fetchMessage = () => {
+    var Message = [{ name: "lewis", text: " yo yo yo" }, { name: "Carlos", text: "KlK" }];
+    const listItems = Message.map(user => (
+      <div key={user.name}>
+        <ul>
+          <li>
+            {user.name} : {user.text}
+          </li>
+        </ul>
+      </div>
+    ));
+    return listItems;
   };
+
   render() {
-    console.log(Messages());
-    return;
-    //  const listItems = Messages().Message.map(user => <li>{name}</li>);
-    //return listItems;
+    return this.fetchMessage();
   }
 }
