@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ChatApp from "./components/ChatApp";
 
-const title = "My Minimal React Webpack Babel Setup";
-
-ReactDOM.render(<div>{title}</div>, document.getElementById("app"));
+ReactDOM.render(<ChatApp />, document.getElementById("app"));
