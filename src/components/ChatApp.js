@@ -1,13 +1,20 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 
 // Components
 import MessageBox from "./MessageBox";
 import MessageCompose from "./MessageCompose"
 
-export default class ChatApp extends Component {
+class ChatApp extends Component {
 
   state = {
-    messages : [{ name: "lewis", text: " yo yo yo" }, { name: "Carlos", text: "KlK" }]
+    messages : []
+  }
+
+  componentDidMount() {
+    this.setState({
+      messages: this.props.messages
+    })
   }
 
   onNewMessageSent = (newMessage) => {
@@ -20,7 +27,6 @@ export default class ChatApp extends Component {
   }
 
   render() {
-
     return (
       <div className="grid-container">
         <div className="message-box">
@@ -33,3 +39,11 @@ export default class ChatApp extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    messages: state.messages
+  }
+}
+
+export default connect(mapStateToProps)(ChatApp)
