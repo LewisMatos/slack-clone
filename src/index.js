@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styleMain from "./styles/main.css";
-import styleNormalize from "./styles/normalize.css";
+//import styleNormalize from "./styles/normalize.css";
+import "bootstrap/dist/css/bootstrap.css";
+import resumeJson from "./resume";
 
 // Components
-import ChatApp from "./components/ChatApp";
+import App from "./components/App";
 
-ReactDOM.render(<ChatApp />, document.getElementById("app"));
+ReactDOM.render(<App resumeJson={resumeJson} />, document.getElementById("app"));
